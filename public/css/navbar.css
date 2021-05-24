@@ -1,0 +1,77 @@
+nav {
+    background-color: #20E0EC;
+}
+
+.navbar {
+    padding: 5px;
+}
+
+#btn {
+    width: 10px;
+}
+
+.img-fluid {
+    height: 3.0rem;
+}
+
+.navbar-toggler {
+    width: 2.6rem;
+    height: 2.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu {
+    height: 2.2rem;
+    margin-right: 1.5rem;
+}
+
+.btn-info {
+    border: none;
+    background-color: #20E0EC;
+    width: 34%;
+}
+
+.pig {
+    height: 2.2rem;
+    margin-left: 2rem;
+
+}
+
+.form-contro {
+    border-radius: 5px 0px 0px 5px;
+    width: 25rem;
+    height: 2.2rem;
+    border: none;
+}
+
+.btn-secondary {
+    border-radius: 0px 5px 5px 0px;
+    height: 2.2rem;
+}
+
+.collapse {
+    display: flex;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 600px) {
+    .form-contro {
+        width: 10rem;
+    }
+
+    .menu {
+        height: 2.2rem;
+        margin-right: 1.5rem;
+    }
+    
+    .pig {
+        height: 2.2rem;
+    }
+      
+}

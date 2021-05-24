@@ -1,0 +1,133 @@
+.title {
+    font-size: 2rem;
+    display: flex;
+    justify-content: right;
+}
+
+.container {
+    width: 100%;
+    height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login {
+    width: 25rem;
+    height: 25rem;
+}
+
+form {
+    background-color: #fff;
+    width: 25rem;
+    height: 25rem;
+    display: grid;
+}
+
+.text-center {
+    margin-top: 2rem;
+    display: grid;
+    justify-content: center;
+}
+
+.imput {
+    border: none;
+    border-bottom: 1px solid #c1c1c1;
+    width: 12rem;
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+.log {
+    width: 100%;
+    display: grid;
+    justify-content: center;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1C1C1C;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+}
+
+.bt_log {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: #1877F2;
+    width: 12rem;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    height: 2.1rem;
+}
+
+.bt_log2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: #4682B4;
+    width: 12rem;
+    border-radius: 8px;
+    color: #fff;
+    margin-top: 5px;
+    margin-bottom: 1.8rem;
+    cursor: pointer;
+    height: 2.1rem;
+}
+
+.img_log {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.bt_env {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8rem;
+    background-color: #20E0EC;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    height: 2.1rem;
+}
+
+.submit {
+    display: grid;
+    justify-content: center;
+}
+
+.option {
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 376px) {
+    .login {
+        width: 22.8rem;
+        height: 25rem;
+    }
+    
+    form {
+        width: 22.8rem;
+        height: 25rem;
+    }
+}
+
+@media (max-width: 321px) {
+    .login {
+        width: 19.5rem;
+        height: 25rem;
+    }
+    
+    form {
+        width: 19.5rem;
+        height: 25rem;
+    }
+}

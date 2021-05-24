@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="pt_br">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Marked</title>
+
+        <!-- CSS -->
+        <link href="css/nav_log_reg.css" rel="stylesheet">
+        <link href="../../public/css/register.css" rel="stylesheet">
+
+    </head>
+    <body>
+        
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a href="index.html">
+        <img src="../../public/img/logomarked.svg" class="img-fluid" alt="Marked">
+      </a>
+    </nav>
+
+    <div class="container">
+      <div class="register">
+        <h1 class="title">Cadastro</h1>
+        <?php if(isset($senha)){ ?>
+          <b style=color:red> * Senha diferente</b>
+        <?php }else if(isset($nome)){ ?>
+          <b style=color:red> * Nome vazio</b>
+        <?php }else if(isset($sobrenome)){ ?>
+          <b style=color:red> * Nome completo vazio</b>
+        <?php }else if(isset($emailInvalido)){ ?>
+          <b style=color:red> * Email invalido</b>
+        <?php }else if(isset($emailDuplicado)){ ?>
+          <b style=color:red> * Email já cadastrado</b>     
+        <?php }else if(isset($senhaVazia)){ ?>
+            <b style=color:red> * Senha vazia</b>
+        <?php } ?>
+        <?php if(isset($get)){ ?>
+          <form action="/register" method="post">
+          <div class="text-center">
+            <div class="responsive">
+                <input class="imput" id="space" name="nome" placeholder="Nome completo"/>
+                <input class="imput" name="nome_user" placeholder="Nome de usuário" />
+            </div>
+            <div class="responsive2">
+                <input class="imput" type="email" name="email" placeholder="E-mail" />
+            </div>
+            <div class="responsive">
+                <input class="imput" id="space" type="password" name="pass" placeholder="Senha"/>
+                <input class="imput" type="password" name="confirm_pass" placeholder="Confirmar senha"/>
+            </div>
+          </div>
+          <p>Ou</p>
+          <div class="reg">
+            <button class="bt_reg"><img class="img_reg" src="../../public/img/facebook.png">⠀Cadastre-se com Facebook</button>
+            <button class="bt_reg2"><img class="img_reg" src="../../public/img/google.png">⠀Cadastre-se com Google</button>
+          </div> 
+          <div class="submit">
+            <button type="submit" class="bt_env">Confirmar</button>  
+          </div>
+          <div class="terms">
+            <h6 class="terms2">Ao criar uma conta, você concorda com os <a href="terms_of_use.html">Termos de Uso</a> do Marked e autoriza o uso de seus dados de acordo com a <a href="terms_of_use.html">Declaração de privacidade</a>.</h6>
+          </div>
+          <p class="option">Já tem conta? &nbsp;<a href="login.html">Entrar</a></p> 
+        </form>
+      </div>
+    </div>
+        <?php }else{ ?>
+          <form action="/register" method="post">
+            <div class="text-center">
+              <div class="responsive">
+                  <input class="imput" id="space" name="nome" placeholder="Nome completo" value="<?=$register['nome']?>"/>
+                  <input class="imput" name="nome_user" placeholder="Nome de usuário" value="<?=$register['nome_user']?>"/>
+              </div>
+              <div class="responsive2">
+                  <input class="imput" type="email" name="email" placeholder="E-mail" value="<?=$register['email']?>"/>
+              </div>
+              <div class="responsive">
+                  <input class="imput" id="space" type="password" name="pass" placeholder="Senha"/>
+                  <input class="imput" type="password" name="confirm_pass" placeholder="Confirmar senha"/>
+              </div>
+            </div>
+            <p>Ou</p>
+            <div class="reg">
+              <button class="bt_reg"><img class="img_reg" src="../../public/img/facebook.png">⠀Cadastre-se com Facebook</button>
+              <button class="bt_reg2"><img class="img_reg" src="../../public/img/google.png">⠀Cadastre-se com Google</button>
+            </div> 
+            <div class="submit">
+              <button type="submit" class="bt_env">Confirmar</button>  
+            </div>
+            <div class="terms">
+              <h6 class="terms2">Ao criar uma conta, você concorda com os <a href="terms_of_use.html">Termos de Uso</a> do Marked e autoriza o uso de seus dados de acordo com a <a href="terms_of_use.html">Declaração de privacidade</a>.</h6>
+            </div>
+            <p class="option">Já tem conta? &nbsp;<a href="login.html">Entrar</a></p> 
+          </form>
+        </div>
+      </div>
+      
+    <?php } ?>
+
+        <!-- Bootstrap JavaScript -->
+      <script src="node_modules/jquery/dist/jquery.js"></script>
+      <script src="node_modules/popper.js/dist/umd/popper.js"></script>
+      <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    </body>
+</html>

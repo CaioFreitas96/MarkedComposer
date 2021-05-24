@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="pt_br">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Marked</title>
+
+        <!-- CSS -->
+        <link href="css/nav_log_reg.css" rel="stylesheet">
+        <link href="../../public/css/login.css" rel="stylesheet">
+
+    </head>
+    <body>
+        
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a href="index.html">
+        <img src="../../public/img/logomarked.svg" class="img-fluid" alt="Marked">
+      </a>
+    </nav>
+
+    <div class="container">
+      <div class="login">
+        <h1 class="title">Login</h1>
+        <form action="/login" method="POST">
+          <?php if(isset($emailInvalido)){ ?>
+            <b style=color:red> * Email invalido </b>
+          <?php }else if(isset($emailErrado)){ ?>
+            <b style=color:red> * Email não cadastrado</b>
+          <?php }else if(isset($senha)){ ?>
+            <b style=color:red> * Senha invalida</b>
+          <?php } ?>
+          
+          <?php if(isset($get)){ ?>
+           
+            <div class="text-center">
+            <input class="imput" type="email" name="email" placeholder="E-mail" /><br><br>
+                <input class="imput" type="password" name="senha" placeholder="Senha" />
+              </div>
+              <p>Ou</p>
+              <div class="log">
+                <button class="bt_log"><img class="img_log" src="../../public/img/facebook.png">⠀Entrar com Facebook</button>
+                <button class="bt_log2"><img class="img_log" src="../../public/img/google.png">⠀⠀Entrar com Google</button>
+              </div> 
+              <div class="submit">
+                <button type="submit" class="bt_env">Confirmar</button>  
+              </div>
+                <p class="option">Não tem conta? &nbsp;<a href="http://localhost:8080/register">Cadastre-se</a></p> 
+            </form>
+          </div>
+        </div>
+
+          <?php }else{?>
+              <div class="text-center">
+                
+                <input class="imput" type="email" name="email" placeholder="E-mail" value="<?=$email?>" /><br><br>
+                <input class="imput" type="password" name="senha" placeholder="Senha" />
+              </div>
+              <p>Ou</p>
+              <div class="log">
+                <button class="bt_log"><img class="img_log" src="../../public/img/facebook.png">⠀Entrar com Facebook</button>
+                <button class="bt_log2"><img class="img_log" src="../../public/img/google.png">⠀⠀Entrar com Google</button>
+              </div> 
+              <div class="submit">
+                <button type="submit" class="bt_env">Confirmar</button>  
+              </div>
+                <p class="option">Não tem conta? &nbsp;<a href="http://localhost:8080/register">Cadastre-se</a></p> 
+            </form>
+          </div>
+        </div>
+        <?php } ?>
+
+        <!-- Bootstrap JavaScript -->
+      <script src="node_modules/jquery/dist/jquery.js"></script>
+      <script src="node_modules/popper.js/dist/umd/popper.js"></script>
+      <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    </body>
+</html>
