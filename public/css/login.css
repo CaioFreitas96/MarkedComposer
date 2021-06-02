@@ -107,6 +107,13 @@ p {
     display: flex;
     justify-content: center;
 }
+.error {
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    font-family: sans-serif;
+    color: #123c61;
+}
 
 @media (max-width: 376px) {
     .login {

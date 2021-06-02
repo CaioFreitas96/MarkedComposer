@@ -17,7 +17,6 @@ class LoginController extends Controller {
             $senha = $request->post('senha');
 
             $login = $loginModel->login($email,$senha);
-
             
             if($login === "email invalido"){
                 $this->view('login',['emailInvalido' => 'emailInvalido', 'email' => $email]);
@@ -26,11 +25,9 @@ class LoginController extends Controller {
             }else if($login === false){
                 $this->view('login',['senha' => 'senha', 'email' => $email]);
             }else{
-                $this->view('indexMarked', ['login' => $login]);
+                $this->redirect('indexMarked');
             }
 
         }
-        
-
     }
 }

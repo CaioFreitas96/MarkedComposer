@@ -21,40 +21,21 @@ class RegisterController extends Controller {
             
             $email = $request->post('email');
             $select = $registerModel->getEmail($email);
-            // var_dump($select);
-
-            if(!empty($select)){
-
-                $this->view('register', ['emailDuplicado' => 'emailDuplicado', 'register' => $register]);
             
+            if(!empty($select)){
+                $this->view('register', ['emailDuplicado' => 'emailDuplicado', 'register' => $register]);
             }else if($senha !== $confirm_senha) {
-               
-                var_dump($senha);
-                var_dump($confirm_senha);
-                echo "<br>senha diferente";
                 $this->view('register', ['senha' => 'senha', 'register' => $register]);
-                
             } else{
-                
-               // var_dump($senha);
-               // var_dump($confirm_senha);
-               //echo "<br>senha igual<br>";
-                
+
                 $db = $registerModel->inserir($register);
-                var_dump($db);
-                
+                    
                 if($db === "nome vazio"){
-
                     $this->view('register', ['nome' => 'nome', 'register' => $register]);
-                
                 }else if($db === "sobrenome_vazio"){
-
                     $this->view('register', ['sobrenome' => 'sobrenome', 'register' => $register]);
-                
                 }else if($db === "email invalido"){
-
                     $this->view('register', ['emailInvalido' => 'emailInvalido', 'register' => $register]);
-
                 }else if($db === "senha vazia"){
                     $this->view('register', ['senhaVazia' => 'senhaVazia', 'register' => $register]);
                 }else{
@@ -63,12 +44,7 @@ class RegisterController extends Controller {
 
             }
 
-            
-            
-
-          
         }
-        
-
+    
     }
 }

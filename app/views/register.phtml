@@ -8,7 +8,7 @@
         <title>Marked</title>
 
         <!-- CSS -->
-        <link href="css/nav_log_reg.css" rel="stylesheet">
+        <link href="../../public/css/nav_log_reg.css" rel="stylesheet">
         <link href="../../public/css/register.css" rel="stylesheet">
 
     </head>
@@ -23,19 +23,7 @@
     <div class="container">
       <div class="register">
         <h1 class="title">Cadastro</h1>
-        <?php if(isset($senha)){ ?>
-          <b style=color:red> * Senha diferente</b>
-        <?php }else if(isset($nome)){ ?>
-          <b style=color:red> * Nome vazio</b>
-        <?php }else if(isset($sobrenome)){ ?>
-          <b style=color:red> * Nome completo vazio</b>
-        <?php }else if(isset($emailInvalido)){ ?>
-          <b style=color:red> * Email invalido</b>
-        <?php }else if(isset($emailDuplicado)){ ?>
-          <b style=color:red> * Email já cadastrado</b>     
-        <?php }else if(isset($senhaVazia)){ ?>
-            <b style=color:red> * Senha vazia</b>
-        <?php } ?>
+       
         <?php if(isset($get)){ ?>
           <form action="/register" method="post">
           <div class="text-center">
@@ -69,6 +57,19 @@
         <?php }else{ ?>
           <form action="/register" method="post">
             <div class="text-center">
+            <?php if(isset($senha)){ ?>
+              <b class='error'>  Senha diferente</b>
+            <?php }else if(isset($nome)){ ?>
+              <b class='error'>  Nome vazio</b>
+            <?php }else if(isset($sobrenome)){ ?>
+              <b class='error'>  Nome completo vazio</b>
+            <?php }else if(isset($emailInvalido)){ ?>
+              <b class='error'>  Email invalido</b>
+            <?php }else if(isset($emailDuplicado)){ ?>
+              <b class='error'>  Email já cadastrado</b>     
+            <?php }else if(isset($senhaVazia)){ ?>
+              <b class='error'>  Senha vazia</b>
+            <?php } ?>
               <div class="responsive">
                   <input class="imput" id="space" name="nome" placeholder="Nome completo" value="<?=$register['nome']?>"/>
                   <input class="imput" name="nome_user" placeholder="Nome de usuário" value="<?=$register['nome_user']?>"/>

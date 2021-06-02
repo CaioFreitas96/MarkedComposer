@@ -1,0 +1,20 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #c1c1c1;
+}
+
+nav {
+    background-color: #20E0EC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-fluid {
+    height: 3.5rem;
+    margin-top: 3px;
+}
+
+
+

@@ -8,7 +8,7 @@
         <title>Marked</title>
 
         <!-- CSS -->
-        <link href="css/nav_log_reg.css" rel="stylesheet">
+        <link href="../../public/css/nav_log_reg.css" rel="stylesheet">
         <link href="../../public/css/login.css" rel="stylesheet">
 
     </head>
@@ -24,13 +24,7 @@
       <div class="login">
         <h1 class="title">Login</h1>
         <form action="/login" method="POST">
-          <?php if(isset($emailInvalido)){ ?>
-            <b style=color:red> * Email invalido </b>
-          <?php }else if(isset($emailErrado)){ ?>
-            <b style=color:red> * Email não cadastrado</b>
-          <?php }else if(isset($senha)){ ?>
-            <b style=color:red> * Senha invalida</b>
-          <?php } ?>
+         
           
           <?php if(isset($get)){ ?>
            
@@ -52,19 +46,28 @@
         </div>
 
           <?php }else{?>
-              <div class="text-center">
-                
-                <input class="imput" type="email" name="email" placeholder="E-mail" value="<?=$email?>" /><br><br>
+
+                  <div class="text-center">
+
+                  <?php if(isset($emailInvalido)){ ?>
+                      <b class='error'>  Email invalido </b><br>
+                  <?php }else if(isset($emailErrado)){ ?>
+                      <b class='error'> Email não cadastrado</b><br>
+                  <?php }else if(isset($senha)){ ?>
+                      <b class='error'> Senha invalida</b><br>
+                  <?php } ?>
+
+                <input class="imput" type="email" name="email" placeholder="E-mail" /><br><br>
                 <input class="imput" type="password" name="senha" placeholder="Senha" />
-              </div>
-              <p>Ou</p>
-              <div class="log">
-                <button class="bt_log"><img class="img_log" src="../../public/img/facebook.png">⠀Entrar com Facebook</button>
-                <button class="bt_log2"><img class="img_log" src="../../public/img/google.png">⠀⠀Entrar com Google</button>
-              </div> 
-              <div class="submit">
-                <button type="submit" class="bt_env">Confirmar</button>  
-              </div>
+               </div>
+                  <p>Ou</p>
+               <div class="log">
+               <button class="bt_log"><img class="img_log" src="../../public/img/facebook.png">⠀Entrar com Facebook</button>
+               <button class="bt_log2"><img class="img_log" src="../../public/img/google.png">⠀⠀Entrar com Google</button>
+               </div> 
+               <div class="submit">
+                  <button type="submit" class="bt_env">Confirmar</button>  
+               </div>
                 <p class="option">Não tem conta? &nbsp;<a href="http://localhost:8080/register">Cadastre-se</a></p> 
             </form>
           </div>
