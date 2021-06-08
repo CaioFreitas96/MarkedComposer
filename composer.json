@@ -1,0 +1,25 @@
+{
+    "name": "caiofreitas96/noobframework-master-marked",
+    "description": "Composer com o noobframework para o site Marked",
+    "type": "project",
+    "authors": [
+        {
+            "name": "CaioFreitas96",
+            "email": "rlcmcaio@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    
+    "autoload": {
+        "psr-4": {
+            "Source\\": "source/"
+        },
+        "files": [
+            "source/Config.php"
+        ]
+    },
+
+    "require": {
+        "league/oauth2-facebook": "2.0.*"
+    }
+}
