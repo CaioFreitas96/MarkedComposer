@@ -1,0 +1,62 @@
+.title {
+    display: flex;
+    justify-content: center;
+    font-size: 2.3rem;
+}
+
+.container {
+    display: grid;
+    justify-content: center;
+    width: 100%;
+}
+
+.notifications {
+    width: 30rem;
+    display: grid;
+    justify-content: center;
+}
+
+.msg {
+    width: 30rem;
+    border: 0.5px solid #c1c1c1;
+    border-radius: 5px;
+    height: auto;
+    margin-bottom: 7px;
+    cursor: pointer;
+}
+
+p {
+    margin: 0px 10px 5px 10px;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 450px) {
+    .notifications {
+        width: 23rem;
+    }
+
+    .msg {
+        width: 23rem;
+    }
+}
+
+
+@media (max-width: 375px) {
+    .notifications {
+        width: 22rem;
+    }
+
+    .msg {
+        width: 22rem;
+    }
+}
+
+@media (max-width: 350px) {
+    .notifications {
+        width: 19rem;
+    }
+
+    .msg {
+        width: 19rem;
+    }
+}

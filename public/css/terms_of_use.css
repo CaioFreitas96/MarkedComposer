@@ -1,0 +1,23 @@
+.title {
+    font-size: 2.3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.about {
+    display: grid;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.cont {
+    width: 65vw;
+    display: grid;
+    justify-content: center;
+}
+
+p {
+    margin-top: 1.8rem;
+    text-align: justify;
+}
+

@@ -28,36 +28,7 @@
           
           <?php if(isset($get)){ ?>
 
-          <?php 
-            ob_start();
-            
-              require "vendor\autoload.php";
-              //C:\php8\projeto\Brincando\TCC\noobframework-master-marked\vendor\autoload.php
-              //vendor\autoload.php
-
-              if(empty($_SESSION["userLogin"])){
-                echo "<h6>Não logado</h6>";
-
-                $facebook = new \League\OAuth2\Client\Provider\Facebook([
-                  'clientId'          => FACEBOOK["app_id"],
-                  'clientSecret'      => FACEBOOK["app_secret"],
-                  'redirectUri'       => FACEBOOK["app_redirect"],
-                  'graphApiVersion'   => FACEBOOK["app_version"],
-                ]);
-                $authurl = $facebook->getAuthorizationUrl([
-                  "scope" => ["email"]
-                ]);
-                
-                echo "<a href='{$authurl}'>Facebook</a>";
-              }else{
-                echo "<h6>Logado</h6>";
-              }
-
-            ob_end_flush();
-
-          ?>
-           
-            <div class="text-center">
+             <div class="text-center">
             <input class="imput" type="email" name="email" placeholder="E-mail" /><br><br>
                 <input class="imput" type="password" name="senha" placeholder="Senha" />
               </div>
@@ -78,13 +49,9 @@
 
                   <div class="text-center">
 
-                  <?php if(isset($emailInvalido)){ ?>
-                      <b class='error'>  Email invalido </b><br>
-                  <?php }else if(isset($emailErrado)){ ?>
-                      <b class='error'> Email não cadastrado</b><br>
-                  <?php }else if(isset($senha)){ ?>
-                      <b class='error'> Senha invalida</b><br>
-                  <?php } ?>
+                  <?php if(isset($erro)){ ?>
+                      <b class='error'>  <?=$erro?> </b><br>
+                  <?php }?>
 
                 <input class="imput" type="email" name="email" placeholder="E-mail" /><br><br>
                 <input class="imput" type="password" name="senha" placeholder="Senha" />

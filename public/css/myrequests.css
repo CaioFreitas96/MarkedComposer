@@ -1,0 +1,54 @@
+.cont-cofre{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    font-size: 2.3rem;
+}
+
+p {
+    justify-content: left;
+}
+
+.cofre {
+    margin: 8px;
+}
+
+.card {
+    margin: 8px;
+}
+
+.card1, .card2{
+    display: flex;
+    flex-direction: row;
+}
+
+.card1 {
+    margin-bottom: 4px;
+}
+
+.btn-primary {
+    width: 8rem;
+    height: 2.5rem;
+    margin-right: 3px;
+    font-size: 1rem;
+}
+
+.bt {
+    width: 100%;
+    height: 3.9rem;
+}
+
+.price {
+    margin-bottom: 12px;
+}
+
+@media (max-width: 1000px) {
+    .cont-cofre {
+        justify-content: center;
+    }
+}

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt_br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="../../public/node_modules/bootstrap/compiler/bootstrap.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../public/css/helpcenter.css">
+    <link rel="stylesheet" href="../../public/css/navbar.css">
+    <link rel="stylesheet" href="../../public/css/menu.css">
+
+    <title>Marked</title>
+  </head>
+  <body>
+
+    <input type="checkbox" id="check">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <div class="log-men">
+            <label for="check">
+              <img src="../../public/img/menu.svg" id="btn"/>
+            </label>
+            <a href="indexMarked">
+              <img src="../../public/img/logomarked.svg" class="img-fluid" alt="Marked">
+            </a>
+          </div>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSite">
+            <form class="form-inline mx-auto" >
+              <input class="form-contro" type="search" placeholder="⠀Pesquisar...">
+              <button class="btn btn-secondary" type="submit">ok</button>
+            </form>
+
+            <a href="safebox">
+              <img src="../../public/img/pig.svg" class="pig" alt="Cofre">
+            </a>
+
+          </div>
+        </div>
+      </nav>
+
+      <div class="sidebar">
+        <header><div class="image"></div>Olá, <?=$user['nome']?></header>
+        <ul>
+          <li><a href="myrequests"><img class="icon" src="../../public/img/myrequests.png">⠀Meus pedidos</a></li>
+          <li><a href="make_order"><img class="icon" src="../../public/img/makeorder.png">⠀Fazer Pedido</a></li>
+          <li><a href="notifications"><img class="icon" src="../../public/img/notification.png">⠀Notificações</a></li>
+          <li><a href="profile"><img class="icon" src="../../public/img/myprofile.png">⠀Meu perfil</a></li>
+          <li><a href="helpcenter"><img class="icon" src="../../public/img/helpcenter.png">⠀Central de ajuda</a></li>
+          <li><a href="about_us"><img class="icon" src="../../public/img/aboutus.png">⠀Sobre nós</a></li>
+          <li><a href="terms_of_use"><img class="icon" src="../../public/img/termsofuse.png">⠀Termos de uso</a></li>
+          <li><a href="http://localhost:8080/login/logout"><img class="icon" src="../../public/img/logoff.svg">⠀Sair</a></li>
+        </ul>
+      </div>
+
+      <div class="form">
+        
+          <h1 class="title">Central de ajuda</h1>
+       
+          <form class="formhelp">
+            <div class="form-group">
+              <label for="inputQuestion">Tema da dúvida</label>
+              <select id="inputQuestion" class="form-control">
+                <option selected>Forma de pagamento</option>
+                <option>Não recebi o produto</option>
+                <option>Demora para entrega</option>
+                <option>Produto com defeito</option>
+                <option>Devolução</option>
+                <option>Cancelar pedido</option>
+                <option>Cancelar proposta</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Como podemos ajudar?</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </form>
+
+          <span>Dúvidas frequentes</span>
+
+          <a href="#">Como fazer meu pedido?</a>
+          <a href="#">Quais pedidos são proibidos na plataforma?</a>
+          <a href="#">Como atrair mais compradores?</a>
+          <a href="#">Como cancelar uma compra?</a>
+          <a href="#">Como apagar meu perfil? </a>
+          <a href="#">Como editar um pedido?</a>
+          <a href="#">Como rastrear meu pedido?</a>
+
+      </div>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    
+  </body>
+</html>

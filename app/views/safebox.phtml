@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="pt_br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="../../public/node_modules/bootstrap/compiler/bootstrap.css" rel="stylesheet">
+
+    <link href="../../public/css/navbar.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../public/css/safebox.css">
+    <link rel="stylesheet" href="../../public/css/menu.css">
+
+    <title>Marked</title>
+  </head>
+  <body>
+
+    <input type="checkbox" id="check">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <div class="log-men">
+            <label for="check">
+              <img src="../../public/img/menu.svg" id="btn"/>
+            </label>
+            <a href="indexMarked">
+              <img src="../../public/img/logomarked.svg" class="img-fluid" alt="Marked">
+            </a>
+          </div>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSite">
+            <form class="form-inline mx-auto" >
+              <input class="form-contro" type="search" placeholder="⠀Pesquisar...">
+              <button class="btn btn-secondary" type="submit">ok</button>
+            </form>
+
+            <a href="safebox">
+              <img src="../../public/img/pig.svg" class="pig" alt="Safebox">
+            </a>
+
+          </div>
+        </div>
+      </nav>
+
+      <div class="sidebar">
+        <header><div class="image"></div>Olá, <?=$user['nome']?></header>
+        <ul>
+        <li><a href="myrequests"><img class="icon" src="../../public/img/myrequests.png">⠀Meus pedidos</a></li>
+          <li><a href="make_order"><img class="icon" src="../../public/img/makeorder.png">⠀Fazer Pedido</a></li>
+          <li><a href="notifications"><img class="icon" src="../../public/img/notification.png">⠀Notificações</a></li>
+          <li><a href="profile"><img class="icon" src="../../public/img/myprofile.png">⠀Meu perfil</a></li>
+          <li><a href="helpcenter"><img class="icon" src="../../public/img/helpcenter.png">⠀Central de ajuda</a></li>
+          <li><a href="about_us"><img class="icon" src="../../public/img/aboutus.png">⠀Sobre nós</a></li>
+          <li><a href="terms_of_use"><img class="icon" src="../../public/img/termsofuse.png">⠀Termos de uso</a></li>
+          <li><a href="http://localhost:8080/login/logout"><img class="icon" src="../../public/img/logoff.svg">⠀Sair</a></li>
+        </ul>
+      </div>
+
+      <div class="cofre">
+        <h1 class="title">Cofre</h1>
+
+        <div class="cont-cofre">
+          <div class="card" style="width: 18rem;">
+            <img src="../../public/img/logomarked.svg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Nome do produto</h5>
+              <p class="card-text price">Preço disposto a pagar:</p>
+              <p class="card-text">Categoria:</p>
+              <div class="card1">
+                <a href="view_more(requests).html" class="btn btn-primary">Ver mais</a>
+                <a href="#" class="btn btn-primary">Excluir</a>
+              </div>
+              <div class="card2">
+                <a href="#" class="btn btn-primary bt">Enviar mensagem</a>
+                <a href="make_proposal.html" class="btn btn-primary bt">Fazer proposta</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="width: 18rem;">
+            <img src="../../public/img/logomarked.svg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Nome do produto</h5>
+              <p class="card-text price">Preço disposto a pagar:</p>
+              <p class="card-text">Categoria:</p>
+              <div class="card1">
+                <a href="#" class="btn btn-primary">Ver mais</a>
+                <a href="#" class="btn btn-primary">Excluir</a>
+              </div>
+              <div class="card2">
+                <a href="#" class="btn btn-primary bt">Enviar mensagem</a>
+                <a href="#" class="btn btn-primary bt">Fazer proposta</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="cont-cofre">
+            <div class="card" style="width: 18rem;">
+              <img src="../../public/img/logomarked.svg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Nome do produto</h5>
+                <p class="card-text price">Preço disposto a pagar:</p>
+                <p class="card-text">Categoria:</p>
+                <div class="card1">
+                  <a href="#" class="btn btn-primary">Ver mais</a>
+                  <a href="#" class="btn btn-primary">Excluir</a>
+                </div>
+                <div class="card2">
+                  <a href="#" class="btn btn-primary bt">Enviar mensagem</a>
+                  <a href="#" class="btn btn-primary bt">Fazer proposta</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cont-cofre">
+            <div class="card" style="width: 18rem;">
+              <img src="../../public/img/logomarked.svg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Nome do produto</h5>
+                <p class="card-text price">Preço disposto a pagar:</p>
+                <p class="card-text">Categoria:</p>
+                <div class="card1">
+                  <a href="#" class="btn btn-primary">Ver mais</a>
+                  <a href="#" class="btn btn-primary">Excluir</a>
+                </div>
+                <div class="card2">
+                  <a href="#" class="btn btn-primary bt">Enviar mensagem</a>
+                  <a href="#" class="btn btn-primary bt">Fazer proposta</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    
+  </body>
+</html>

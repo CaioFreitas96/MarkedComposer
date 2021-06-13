@@ -4,7 +4,7 @@ namespace App\Controllers;
 use Core\Controller;
 use Core\Session;
 
-class IndexMarkedController extends Controller {
+class NotificationsController extends Controller {
     
     private $session;
 
@@ -20,6 +20,6 @@ class IndexMarkedController extends Controller {
     public function index() {
 
         $user = $this->session->get('user');
-        $this->view('indexMarked', ['user' => $user]);
+        $this->view('notifications', ['user' => $user]);
     }
 }

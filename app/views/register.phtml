@@ -55,27 +55,26 @@
       </div>
     </div>
         <?php }else{ ?>
+        
           <form action="/register" method="post">
             <div class="text-center">
+
+            
+              
             <?php if(isset($senha)){ ?>
               <b class='error'>  Senha diferente</b>
-            <?php }else if(isset($nome)){ ?>
-              <b class='error'>  Nome vazio</b>
-            <?php }else if(isset($sobrenome)){ ?>
-              <b class='error'>  Nome completo vazio</b>
-            <?php }else if(isset($emailInvalido)){ ?>
-              <b class='error'>  Email invalido</b>
             <?php }else if(isset($emailDuplicado)){ ?>
-              <b class='error'>  Email já cadastrado</b>     
-            <?php }else if(isset($senhaVazia)){ ?>
-              <b class='error'>  Senha vazia</b>
+              <b class='error'>  Email já cadastrado</b>  
+            <?php }else if(isset($erro)){ ?>
+              <b class='error'>  <?=$erro?> </b>   
             <?php } ?>
+
               <div class="responsive">
-                  <input class="imput" id="space" name="nome" placeholder="Nome completo" value="<?=$register['nome']?>"/>
-                  <input class="imput" name="nome_user" placeholder="Nome de usuário" value="<?=$register['nome_user']?>"/>
+                  <input class="imput" id="space" name="nome" placeholder="Nome completo" value="<?=$post['nome']?>"/>
+                  <input class="imput" name="nome_user" placeholder="Nome de usuário" value="<?=$post['nome_user']?>"/>
               </div>
               <div class="responsive2">
-                  <input class="imput" type="email" name="email" placeholder="E-mail" value="<?=$register['email']?>"/>
+                  <input class="imput" type="email" name="email" placeholder="E-mail" value="<?=$post['email']?>"/>
               </div>
               <div class="responsive">
                   <input class="imput" id="space" type="password" name="pass" placeholder="Senha"/>
@@ -91,9 +90,9 @@
               <button type="submit" class="bt_env">Confirmar</button>  
             </div>
             <div class="terms">
-              <h6 class="terms2">Ao criar uma conta, você concorda com os <a href="terms_of_use.html">Termos de Uso</a> do Marked e autoriza o uso de seus dados de acordo com a <a href="terms_of_use.html">Declaração de privacidade</a>.</h6>
+              <h6 class="terms2">Ao criar uma conta, você concorda com os <a href="terms_of_use">Termos de Uso</a> do Marked e autoriza o uso de seus dados de acordo com a <a href="terms_of_use">Declaração de privacidade</a>.</h6>
             </div>
-            <p class="option">Já tem conta? &nbsp;<a href="login.html">Entrar</a></p> 
+            <p class="option">Já tem contaa? &nbsp;<a href="http://localhost:8080/login">Entrar</a></p> 
           </form>
         </div>
       </div>

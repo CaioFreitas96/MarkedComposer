@@ -14,7 +14,7 @@ class RegisterController extends Controller {
         }else{
             
             $registerModel = new Register(); 
-            $register = $request->post();
+            $post = $request->post();
             
             $senha = $request->post('pass');
             $confirm_senha = $request->post('confirm_pass');
@@ -23,25 +23,36 @@ class RegisterController extends Controller {
             $select = $registerModel->getEmail($email);
             
             if(!empty($select)){
-                $this->view('register', ['emailDuplicado' => 'emailDuplicado', 'register' => $register]);
+                $this->view('register', ['emailDuplicado' => 'emailDuplicado', 'post' => $post]);
             }else if($senha !== $confirm_senha) {
-                $this->view('register', ['senha' => 'senha', 'register' => $register]);
+                $this->view('register', ['senha' => 'senha', 'post' => $post]);
             } else{
 
-                $db = $registerModel->inserir($register);
+                $db = $registerModel->inserir($post);
+                
+                
+                if(is_string($db)){
                     
-                if($db === "nome vazio"){
-                    $this->view('register', ['nome' => 'nome', 'register' => $register]);
-                }else if($db === "sobrenome_vazio"){
-                    $this->view('register', ['sobrenome' => 'sobrenome', 'register' => $register]);
-                }else if($db === "email invalido"){
-                    $this->view('register', ['emailInvalido' => 'emailInvalido', 'register' => $register]);
-                }else if($db === "senha vazia"){
-                    $this->view('register', ['senhaVazia' => 'senhaVazia', 'register' => $register]);
+                    switch($db){
+                        case 'nome vazio':
+                            $erro = 'Nome vazio';
+                            break;
+                        case 'sobrenome_vazio':
+                            $erro = 'Nome completo vazio';
+                            break;
+                        case 'email invalido':
+                            $erro = 'Email invalido';
+                            break;
+                        case 'senha vazia':
+                            $erro = 'Senha vazia';
+                            break;
+                    }
+
+                    $this->view('register', ['erro' => $erro, 'post' => $post]);
                 }else{
                     $this->view('login');
                 }
-
+                          
             }
 
         }

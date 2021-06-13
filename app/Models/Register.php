@@ -43,15 +43,14 @@ class Register{
             }else{
                 
                 $post = [
-                    //nome bamco             nome do formulario
+                    //nome banco             nome do formulario
                         'nome' =>  $post['nome'],
                         'nome_usuario' => $post['nome_user'],
                         'email' => filter_var($post['email'], FILTER_VALIDATE_EMAIL),
                         'senha' => password_hash($post['pass'], PASSWORD_BCRYPT, ["cost" => 10]) 
                     ];
 
-                       //var_dump($post); 
-                       //var_dump($db);die();
+                       
                         return $db->insert($this->table, $post);
                         
 

@@ -4,6 +4,7 @@ namespace App\Controllers;
 use Core\Controller;
 use Core\Request;
 use App\Models\Login;
+use Core\Session;
 
 class LoginController extends Controller {
     
@@ -17,17 +18,32 @@ class LoginController extends Controller {
             $senha = $request->post('senha');
 
             $login = $loginModel->login($email,$senha);
-            
-            if($login === "email invalido"){
-                $this->view('login',['emailInvalido' => 'emailInvalido', 'email' => $email]);
-            }else if($login === "email errado"){
-                $this->view('login',['emailErrado' => 'emailErrado', 'email' => $email]);
-            }else if($login === false){
-                $this->view('login',['senha' => 'senha', 'email' => $email]);
-            }else{
-                $this->redirect('indexMarked');
-            }
 
+            switch($login){
+                case 'email invalido':
+                    $erro = "Email invalido";
+                    break;
+                case 'email errado':
+                    $erro = "Email não cadastrado";
+                    break;
+                case false:
+                    $erro = "Senha invalida";
+                    break;
+
+            }
+                if(is_array($login)){
+                    $session = Session::getInstance();
+                    $user = $session->set('user', $login);
+                    $this->redirect('indexMarked');
+                }else{
+                    $this->view('login', ['erro' => $erro]);
+                }
+                     
         }
+    }
+    public function logout(){
+        $session = Session::getInstance();
+        $session->destroy();
+        $this->redirect('../login');
     }
 }
