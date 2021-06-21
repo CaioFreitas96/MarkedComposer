@@ -146,15 +146,16 @@ class DataBase {
 
         foreach($condition as $column => $value) {
             $conditions[] = "$column = :$column";
-            $conditions[":$column"] = $value;
+            $updateValues[":$column"] = $value;
         }
         $conditions = implode(' AND ', $conditions);
 
         $query = "UPDATE $table SET $updatesColumns WHERE $conditions";
+        //var_dump($query);die();
         try {
             $this->dispatch($query, $updateValues);
         } catch(PDOException $e) {
-            return false;
+            return false; 
         }
         return true;
     }

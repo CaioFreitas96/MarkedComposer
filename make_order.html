@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pt_br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="public/node_modules/bootstrap/compiler/bootstrap.css" rel="stylesheet">
+
+    <link href="public/css/navbar.css" rel="stylesheet">
+    <link rel="stylesheet" href="public/css/make_order.css">
+    <link href="public/css/menu.css" rel="stylesheet">
+
+    <title>Marked</title>
+  </head>
+  <body>
+
+    <input type="checkbox" id="check">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <div class="log-men">
+            <label for="check">
+              <img src="images/menu.svg" id="btn"/>
+            </label>
+            <a href="index.html">
+              <img src="images/logomarked.svg" class="img-fluid" alt="Marked">
+            </a>
+          </div>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSite">
+            <form class="form-inline mx-auto" >
+              <input class="form-contro" type="search" placeholder="⠀Pesquisar...">
+              <button class="btn btn-secondary" type="submit">ok</button>
+            </form>
+
+            <a href="safebox.html">
+              <img src="images/pig.svg" class="pig" alt="Cofre">
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="sidebar">
+        <header><div class="image"></div>Olá, ...</header>
+        <ul>
+          <li><a href="myrequests.html"><img class="icon" src="images/myrequests.png">⠀Meus pedidos</a></li>
+          <li><a href="make_order.html"><img class="icon" src="images/makeorder.png">⠀Fazer Pedido</a></li>
+          <li><a href="notifications.html"><img class="icon" src="images/notification.png">⠀Notificações</a></li>
+          <li><a href="profile.html"><img class="icon" src="images/myprofile.png">⠀Meu perfil</a></li>
+          <li><a href="helpcenter.html"><img class="icon" src="images/helpcenter.png">⠀Central de ajuda</a></li>
+          <li><a href="about_us.html"><img class="icon" src="images/aboutus.png">⠀Sobre nós</a></li>
+          <li><a href="terms_of_use.html"><img class="icon" src="images/termsofuse.png">⠀Termos de uso</a></li>
+          <li><a href="#"><img class="icon" src="images/logoff.svg">⠀Sair</a></li>
+        </ul>
+      </div>
+   
+      <div>
+          <h1 class="title">Fazer pedido</h1>
+
+          <p class="alert">Adicione uma foto ou imagem ilustrativa do que deseja</p>
+
+          <form action="">
+            <div class="cont">
+              <div class="img-cont">
+                <img id="img" class="img" alt="Adicione uma imagem">
+              </div>
+              
+              <div class="quest">
+                <input class="upload" type='file' onchange="readURL(this);"/>
+
+                <div class="mb-3">
+                  <label class="form-label">Nome do produto</label>
+                  <input type="text" class="form-control" id="name" placeholder="Ex: Gravador de som">
+                </div>
+
+                <div class="mb-3">
+                  <label for="inputQuestion">Categoria</label>
+                  <select id="inputQuestion" class="form-control">
+                    <option selected>Notebooks</option>
+                    <option>Monitores</option>
+                    <option>Computadores</option>
+                    <option>Fios</option>
+                    <option>Headsets</option>
+                    <option>Eletrodomésticos</option>
+                    <option>Jogos</option>
+                    <option>Tablets</option>
+                    <option>Áudios</option>
+                    <option>Drones e acessórios</option>
+                    <option>Outros</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Descrição</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Ex: Gravador de som, preto e semi-novo."></textarea>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Preço disposto a pagar (frete não incluso)</label>
+                  <input type="text" class="form-control" id="qtd">
+                </div>
+                <span>Obs: um preço justo, fará com que mais vendedores venham até você</span>
+                <div class="center">
+                  <button type="submit" class="btn btn-primary">Confirmar pedido</button>
+                </div>
+              </div>
+            </div>
+          </form>
+      </div>
+
+      <script>
+        function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#img').attr('src', e.target.result);
+            };
+            reader.readAsDataURL(input.files[0]);
+            }
+        }
+      </script>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    
+  </body>
+</html>

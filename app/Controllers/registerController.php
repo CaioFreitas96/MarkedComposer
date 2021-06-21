@@ -18,18 +18,20 @@ class RegisterController extends Controller {
             
             $senha = $request->post('pass');
             $confirm_senha = $request->post('confirm_pass');
+
+             
             
             $email = $request->post('email');
             $select = $registerModel->getEmail($email);
-            
-            if(!empty($select)){
+            if(strlen($senha) < 8){
+                $this->view('register', ['senhaPequena' => 'senhaPequena', 'post' => $post]);
+            }else if(!empty($select)){
                 $this->view('register', ['emailDuplicado' => 'emailDuplicado', 'post' => $post]);
             }else if($senha !== $confirm_senha) {
                 $this->view('register', ['senha' => 'senha', 'post' => $post]);
             } else{
 
                 $db = $registerModel->inserir($post);
-                
                 
                 if(is_string($db)){
                     

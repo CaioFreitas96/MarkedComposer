@@ -7,7 +7,7 @@ use Core\Database;
 
 
 class Register{
-    private $table = 'register';
+    private $table = 'user';
 
     public function getAll(){
         $db = Database::getInstance();
@@ -44,10 +44,10 @@ class Register{
                 
                 $post = [
                     //nome banco             nome do formulario
-                        'nome' =>  $post['nome'],
-                        'nome_usuario' => $post['nome_user'],
-                        'email' => filter_var($post['email'], FILTER_VALIDATE_EMAIL),
-                        'senha' => password_hash($post['pass'], PASSWORD_BCRYPT, ["cost" => 10]) 
+                        'user_name' =>  $post['nome'],
+                        'full_name' => $post['nome_user'],
+                        'user_email' => filter_var($post['email'], FILTER_VALIDATE_EMAIL),
+                        'user_password' => password_hash($post['pass'], PASSWORD_BCRYPT, ["cost" => 10]) 
                     ];
 
                        
@@ -61,7 +61,7 @@ class Register{
     public function getEmail($condicao){
         $db = Database::getInstance();
     
-        return $db->getList($this->table, '*', ['email' => $condicao]);
+        return $db->getList($this->table, '*', ['user_email' => $condicao]);
     }  
 
 }  

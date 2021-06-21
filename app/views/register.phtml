@@ -48,9 +48,9 @@
             <button type="submit" class="bt_env">Confirmar</button>  
           </div>
           <div class="terms">
-            <h6 class="terms2">Ao criar uma conta, você concorda com os <a href="terms_of_use.html">Termos de Uso</a> do Marked e autoriza o uso de seus dados de acordo com a <a href="terms_of_use.html">Declaração de privacidade</a>.</h6>
+            <h6 class="terms2">Ao criar uma conta, você concorda com os <a href="terms_of_use">Termos de Uso</a> do Marked e autoriza o uso de seus dados de acordo com a <a href="terms_of_use">Declaração de privacidade</a>.</h6>
           </div>
-          <p class="option">Já tem conta? &nbsp;<a href="login.html">Entrar</a></p> 
+          <p class="option">Já tem conta? &nbsp;<a href="/login">Entrar</a></p> 
         </form>
       </div>
     </div>
@@ -60,8 +60,9 @@
             <div class="text-center">
 
             
-              
-            <?php if(isset($senha)){ ?>
+            <?php if(isset($senhaPequena)){ ?>
+              <b class='error'>  Senha deve conter no minimo 8 caracteres</b> 
+            <?php }else if(isset($senha)){ ?>
               <b class='error'>  Senha diferente</b>
             <?php }else if(isset($emailDuplicado)){ ?>
               <b class='error'>  Email já cadastrado</b>  
@@ -92,7 +93,7 @@
             <div class="terms">
               <h6 class="terms2">Ao criar uma conta, você concorda com os <a href="terms_of_use">Termos de Uso</a> do Marked e autoriza o uso de seus dados de acordo com a <a href="terms_of_use">Declaração de privacidade</a>.</h6>
             </div>
-            <p class="option">Já tem contaa? &nbsp;<a href="http://localhost:8080/login">Entrar</a></p> 
+            <p class="option">Já tem conta? &nbsp;<a href="http://localhost:8080/login">Entrar</a></p> 
           </form>
         </div>
       </div>
