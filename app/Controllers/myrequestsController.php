@@ -25,14 +25,14 @@ class MyrequestsController extends Controller {
         $user = $this->session->get('user');
 
         if(empty($request)){
-
-            $makeOrder = $myRequests->getAll();
+            
+            $makeOrder = $myRequests->getAll($user['id_user']);
             $this->view('myrequests', ['user' => $user, 'makeOrder' => $makeOrder]);
 
         }else if(array_key_exists("update", $request)){
                       
-           echo "myrequests post";
-           $makeOrder = $myRequests->getAll();
+           
+           $makeOrder = $myRequests->getAll($user['id_user']);
            $condicao = $request['update'];
            unset($request['update']);
            $update = $myRequests->atualiza($request, $condicao);
@@ -61,7 +61,7 @@ class MyrequestsController extends Controller {
             $botao = $request->post();
             $condicao = $botao['excluir'];
             $deleta = $myRequests->deletar($condicao);
-            $makeOrder = $myRequests->getAll();
+            $makeOrder = $myRequests->getAll($user['id_user']);
             
             $this->redirect('/myrequests');
             

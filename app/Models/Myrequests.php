@@ -10,11 +10,11 @@ class Myrequests{
     
     private $table = 'makeOrder';
 
-    public function getAll(){
+    public function getAll($id){
        
         $db = Database::getInstance();
        
-        return $db->getList($this->table, '*');
+        return $db->getList($this->table, '*', ['id_user' => $id]);
     }
     public function get($post = null){
        

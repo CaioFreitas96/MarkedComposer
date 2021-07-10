@@ -64,77 +64,29 @@
         <h1 class="title">Cofre</h1>
 
         <div class="cont-cofre">
-          <div class="card" style="width: 18rem;">
-            <img src="../../public/img/logomarked.svg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Nome do produto</h5>
-              <p class="card-text price">Preço disposto a pagar:</p>
-              <p class="card-text">Categoria:</p>
-              <div class="card1">
-                <a href="view_more(requests).html" class="btn btn-primary">Ver mais</a>
-                <a href="#" class="btn btn-primary">Excluir</a>
-              </div>
-              <div class="card2">
-                <a href="#" class="btn btn-primary bt">Enviar mensagem</a>
-                <a href="make_proposal.html" class="btn btn-primary bt">Fazer proposta</a>
-              </div>
-            </div>
-          </div>
+          
+          <?php foreach($order as $value){ ?>
 
-          <div class="card" style="width: 18rem;">
-            <img src="../../public/img/logomarked.svg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Nome do produto</h5>
-              <p class="card-text price">Preço disposto a pagar:</p>
-              <p class="card-text">Categoria:</p>
-              <div class="card1">
-                <a href="#" class="btn btn-primary">Ver mais</a>
-                <a href="#" class="btn btn-primary">Excluir</a>
-              </div>
-              <div class="card2">
-                <a href="#" class="btn btn-primary bt">Enviar mensagem</a>
-                <a href="#" class="btn btn-primary bt">Fazer proposta</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="cont-cofre">
             <div class="card" style="width: 18rem;">
-              <img src="../../public/img/logomarked.svg" class="card-img-top" alt="...">
+              <img src="<?=$value['path_image']?>" class="card-img-top" style="width:285px; height:150px;">
               <div class="card-body">
-                <h5 class="card-title">Nome do produto</h5>
-                <p class="card-text price">Preço disposto a pagar:</p>
-                <p class="card-text">Categoria:</p>
-                <div class="card1">
-                  <a href="#" class="btn btn-primary">Ver mais</a>
-                  <a href="#" class="btn btn-primary">Excluir</a>
-                </div>
-                <div class="card2">
-                  <a href="#" class="btn btn-primary bt">Enviar mensagem</a>
-                  <a href="#" class="btn btn-primary bt">Fazer proposta</a>
-                </div>
+                <h5 class="card-title"><?=$value['order_name']?></h5>
+                <p class="card-text price">Preço disposto a pagar:<?=$value['order_price']?></p>
+                <p class="card-text">Categoria: <?=$value['categories']?></p>
+                <form method="POST" action="/view_more"> 
+                  <div class="card1">
+                    <button href="view_more" class="btn btn-primary bt" name="view_more" value="<?=$value['id_order']?>">Ver mais</button>
+                  </div>
+                </form>
+                <form method="POST" action="/make_proposal">    
+                  <div class="card2">
+                    <button href="make_proposal" class="btn btn-primary bt" name="make_proposal" value="<?=$value['id_order']?>">Fazer proposta</button>
+                  </div>
+                </form>
               </div>
             </div>
-          </div>
-
-          <div class="cont-cofre">
-            <div class="card" style="width: 18rem;">
-              <img src="../../public/img/logomarked.svg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Nome do produto</h5>
-                <p class="card-text price">Preço disposto a pagar:</p>
-                <p class="card-text">Categoria:</p>
-                <div class="card1">
-                  <a href="#" class="btn btn-primary">Ver mais</a>
-                  <a href="#" class="btn btn-primary">Excluir</a>
-                </div>
-                <div class="card2">
-                  <a href="#" class="btn btn-primary bt">Enviar mensagem</a>
-                  <a href="#" class="btn btn-primary bt">Fazer proposta</a>
-                </div>
-              </div>
-            </div>
-          </div>
+         
+        <?php } ?>  
         </div>
       </div>
 

@@ -9,29 +9,16 @@
     <link href="../../public/node_modules/bootstrap/compiler/bootstrap.css" rel="stylesheet">
 
     <link href="../../public/css/navbar.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../public/css/make_order.css">
+    <link rel="stylesheet" href="../../public/css/make_proposal.css">
     <link href="../../public/css/menu.css" rel="stylesheet">
 
     <title>Marked</title>
   </head>
   <body>
     <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous">
-    </script>
-    <script>
-        $(function(){
-            $('#upload').change(function(){
-                
-                const file = $(this)[0].files[0]
-                const fileReader = new FileReader()
-                fileReader.onloadend = function(){
-                    $('#img').attr('src',fileReader.result)
-                }
-                fileReader.readAsDataURL(file)
-            })
-        })
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous">
     </script>
 
     <input type="checkbox" id="check">
@@ -59,110 +46,49 @@
             <a href="safebox">
               <img src="../../public/img/pig.svg" class="pig" alt="Cofre">
             </a>
+
           </div>
         </div>
       </nav>
-      
+
       <div class="sidebar">
-        <header><div class="image"></div>Olá, <?=$user['user_name']?></header>
+        <header><div class="image"></div>Olá, ...</header>
         <ul>
-        <li><a href="myrequests"><img class="icon" src="../../public/img/myrequests.png">⠀Meus pedidos</a></li>
+          <li><a href="myrequests"><img class="icon" src="../../public/img/myrequests.png">⠀Meus pedidos</a></li>
           <li><a href="make_order"><img class="icon" src="../../public/img/makeorder.png">⠀Fazer Pedido</a></li>
           <li><a href="notifications"><img class="icon" src="../../public/img/notification.png">⠀Notificações</a></li>
           <li><a href="profile"><img class="icon" src="../../public/img/myprofile.png">⠀Meu perfil</a></li>
-          <li><a href="helpcenter"><img class="icon" src="../../public/img/helpcenter.png">⠀Central de ajuda</a></li>
+          <li><a href="helpcenter><img class="icon" src="../../public/img/helpcenter.png">⠀Central de ajuda</a></li>
           <li><a href="about_us"><img class="icon" src="../../public/img/aboutus.png">⠀Sobre nós</a></li>
           <li><a href="terms_of_use"><img class="icon" src="../../public/img/termsofuse.png">⠀Termos de uso</a></li>
           <li><a href="http://localhost:8080/login/logout"><img class="icon" src="../../public/img/logoff.svg">⠀Sair</a></li>
         </ul>
       </div>
+      <?php if(isset($array)){ ?>
+        <div>
+          <h1 class="title">Fazer proposta</h1>
 
-      <?php if(isset($get)){ ?>
-        
-          <h1 class="title">Fazer pedido</h1>
-
-          <p class="alert">Adicione uma foto ou imagem ilustrativa do que deseja</p>
-
-          <form action="/make_order" method="POST" enctype="multipart/form-data">
-
+          <form action="/make_proposal/insert" method="POST" enctype="multipart/form-data">
+            
             <div class="cont">
               <div class="img-cont" style="width:420px; height:250px">
-                <img  id="img" alt="Adicione uma imagem" style="width:420px; height:250px; text-align:center">
+                <img  id="img" alt="Adicione uma imagem" name="imagem" style="width:420px; height:250px; text-align:center">
               </div>
               
               <div class="quest">
                 <input type='file' id="upload" name="imagem">
+                
+                <div class="mb-3">
+                <br>
+                
+                  <label class="form-label">Nome do produto</label>
+                  <input type="text" class="form-control" id="name" name="nome_produto" value="<?=$array['nome_produto']?>">
+                </div>
 
                 <div class="mb-3">
                 <br>
-                  <label class="form-label">Nome do produto</label>
-                  <input type="text" class="form-control" id="name" name="nome_produto" 
-                  placeholder="Ex: Gravador de som">
-                </div>
-
-                <div class="mb-3">
                   <label for="inputQuestion">Categoria</label>
-                  <select id="inputQuestion" name="categoria" class="form-control">
-                    <option selected>Notebooks</option>
-                    <option>Monitores</option>
-                    <option>Computadores</option>
-                    <option>Celulares</option>
-                    <option>Fios</option>
-                    <option>Headsets</option>
-                    <option>Eletrodomésticos</option>
-                    <option>Jogos</option>
-                    <option>Tablets</option>
-                    <option>Áudios</option>
-                    <option>Drones e acessórios</option>
-                    <option>Outros</option>
-                  </select>
-                </div>
-
-                <div class="form-group">
-                  <label for="exampleFormControlTextarea1">Descrição</label>
-                  <textarea class="form-control" name="descricao" id="exampleFormControlTextarea1" rows="3" placeholder="Ex: Gravador de som, preto e semi-novo."></textarea>
-                </div>
-
-                <div class="mb-3">
-                  <label class="form-label">Preço disposto a pagar (frete não incluso)</label>
-                  <input type="text" class="form-control" name="preco" id="qtd">
-                </div>
-                <span>Obs: um preço justo, fará com que mais vendedores venham até você</span>
-                           
-                <div class="center">
-                    <button type="submit" class="btn btn-primary">Confirmar pedido</button>
-                </div>
-              </div>
-            </div>
-          </form>
-      </div>
-
-<?php } else { ?>
-
-      <div>
-          <h1 class="title">Fazer pedido</h1>
-
-          <p class="alert">Adicione uma foto ou imagem ilustrativa do que deseja</p>
-
-          <form action="/make_order" method="POST" enctype="multipart/form-data">
-
-            <div class="cont">
-              <div class="img-cont" id="img-container">
-                <img  id="img" >
-              </div>
-              
-              <div class="quest">
-                <input type='file' id="upload">
-
-                <div class="mb-3">
-                  <label class="form-label">Nome do produto</label>
-                  <input type="text" class="form-control" id="name" name="nome_produto" 
-                  placeholder="Ex: Gravador de som" value="<?=$array['nome_produto']?>">
-                </div>
-
-                <div class="mb-3">
-                  <label for="inputQuestion">Categoria</label>
-                  <select id="inputQuestion" name="categoria" class="form-control">
+                  <select id="inputQuestion" class="form-control" name="categoria">
                     <option selected>Notebooks</option>
                     <option>Monitores</option>
                     <option>Computadores</option>
@@ -173,41 +99,123 @@
                     <option>Tablets</option>
                     <option>Áudios</option>
                     <option>Drones e acessórios</option>
-                    <option>Outros</option>
+                    <option selected><?=$array['categoria']?></option>
                   </select>
                 </div>
 
-                <div class="form-group">
-                  <label for="exampleFormControlTextarea1">Descrição</label>
-                  <textarea class="form-control" name="descricao" id="exampleFormControlTextarea1" rows="3" 
-                   placeholder="Ex: Gravador de som, preto e semi-novo." ><?=$array['descricao']?></textarea>
+                <div class="mb-3">
+                  <label class="form-label">Preço</label>
+                  <input type="text" class="form-control" name="preco" id="price">
                 </div>
 
                 <div class="mb-3">
-                  <label class="form-label">Preço disposto a pagar (frete não incluso)</label>
-                  <input type="text" class="form-control" name="preco" id="qtd" value="<?=$array['preco']?>" >
+                  <label class="form-label">Quantidade</label>
+                  <input type="text" class="form-control" name="quantidade" id="qtd">
                 </div>
-                <span>Obs: um preço justo, fará com que mais vendedores venham até você</span>
-                
-                  <?php if(isset($erro)){ ?>
+
+            
+
+
+              <div class="col-md-6">
+               
+                <?php if(isset($erro)){ ?>
                       <b style="text-align:center"> <?=$erro?> </b>
                   <?php } ?>
                 
-                <div class="center">
-                    <button type="submit" class="btn btn-primary">Confirmar pedido</button>
-                </div>
               </div>
+                
+                
+                <div class="center">
+                  <br>  
+                  <button type="submit" class="btn btn-primary" name="id_order" 
+                  value="<?=$array['id_order']?>">Enviarrr</button>
+                </div>
+              
             </div>
           </form>
       </div>
+      <?php }else{ ?>
+      <div>
+          <h1 class="title">Fazer proposta</h1>
 
-      
-<?php } ?>
+          <form action="/make_proposal/insert" method="POST" enctype="multipart/form-data">
+            
+            <div class="cont">
+              <div class="img-cont" style="width:420px; height:250px">
+                <img  id="img" alt="Adicione uma imagem" name="imagem" style="width:420px; height:250px; text-align:center">
+              </div>
+              
+              <div class="quest">
+                <input type='file' id="upload" name="imagem">
+                
+                <div class="mb-3">
+                <br>
+                
+                  <label class="form-label">Nome do produto</label>
+                  <input type="text" class="form-control" id="name" name="nome_produto" value="<?=$order['order_name']?>">
+                </div>
 
+                <div class="mb-3">
+                <br>
+                  <label for="inputQuestion">Categoria</label>
+                  <select id="inputQuestion" class="form-control" name="categoria">
+                    <option selected>Notebooks</option>
+                    <option>Monitores</option>
+                    <option>Computadores</option>
+                    <option>Fios</option>
+                    <option>Headsets</option>
+                    <option>Eletrodomésticos</option>
+                    <option>Jogos</option>
+                    <option>Tablets</option>
+                    <option>Áudios</option>
+                    <option>Drones e acessórios</option>
+                    <option selected><?=$order['categories']?></option>
+                  </select>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Preço</label>
+                  <input type="text" class="form-control" name="preco" id="price">
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Quantidade</label>
+                  <input type="text" class="form-control" name="quantidade" id="qtd">
+                </div>
+
+            
+
+
+              <div class="col-md-6">
+               
+                      
+                <div class="center">
+                  <br>  
+                  <button type="submit" class="btn btn-primary" name="id_order" 
+                  value="<?=$order['id_order']?>">Enviar1</button>
+                </div>
+              
+            </div>
+          </form>
+      </div>
+    <?php } ?>
+      <script>
+        $(function(){
+            $('#upload').change(function(){
+                
+                const file = $(this)[0].files[0]
+                const fileReader = new FileReader()
+                fileReader.onloadend = function(){
+                    $('#img').attr('src',fileReader.result)
+                }
+                fileReader.readAsDataURL(file)
+            })
+        })
+    </script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="../../public/node_modules/jquery/dist/jquery.js"></script>
-    <script src="../../public/node_modules/popper.js/dist/umd/popper.js"></script>
-    <script src="../../public/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
     
   </body>
 </html>

@@ -30,7 +30,8 @@ class Make_order{
                 'order_price' => $post['preco'],
                 'order_img' => $post['imagem'],
                 'categories' => $post['categoria'],
-                'path_image' => $post['diretorio']
+                'path_image' => $post['diretorio'],
+                'id_user' => $post['id_user']
             ];
 
            // var_dump($post);die();

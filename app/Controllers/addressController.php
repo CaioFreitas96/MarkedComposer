@@ -4,9 +4,7 @@ namespace App\Controllers;
 use Core\Controller;
 use Core\Session;
 
-use App\Models\Safebox;
-
-class SafeboxController extends Controller {
+class AddressController extends Controller {
     
     private $session;
 
@@ -22,10 +20,6 @@ class SafeboxController extends Controller {
     public function index() {
 
         $user = $this->session->get('user');
-        $safaboxModel = new Safebox();
-        
-        $order = $safaboxModel->safebox();
-        
-        $this->view('safebox', ['user' => $user, 'order' => $order]);
+        $this->view('address', ['user' => $user]);
     }
 }

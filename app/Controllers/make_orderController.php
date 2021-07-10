@@ -32,18 +32,16 @@ class Make_orderController extends Controller {
             $post = $request->post();
 
             $diretorio = "public\upload\img".$imagem['name'];
-            
-                
-            
-            
-
+        
             $array = [
                 'nome_produto' => $post['nome_produto'],
                 'categoria' => $post['categoria'],
                 'descricao' => $post['descricao'],
                 'preco' => $post['preco'],
                 'imagem' => $imagem['name'],
-                'diretorio' => $diretorio
+                'diretorio' => $diretorio,
+                'id_user' => $user['id_user']
+                
             ];
             
             

@@ -1,0 +1,50 @@
+.title {
+    font-size: 2.3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.list {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.form {
+    width: 35rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2.5rem;
+}
+
+.imput {
+    width: 15rem;
+    height: 2rem;
+    border: none;
+    border-bottom: 0.5px solid #c1c1c1;
+    margin-bottom: 25px;
+    margin-left: 10px;
+}
+
+.confirm {
+    width: 15rem;
+    height: 2rem;
+    border-radius: 7px;
+    background-color: #20E0EC;
+    margin-top: 2.5rem;
+    border: none;
+}
+
+@media (max-width: 520px) {
+    .title {
+        font-size: 1.7rem;
+        display: flex;
+        justify-content: center;
+    }
+    .form {
+        margin-top: 0.8rem;
+        width: 20rem;
+    }
+}

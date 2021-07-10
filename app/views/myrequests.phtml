@@ -64,96 +64,45 @@
 
         <h1 class="title">Meus pedidos</h1>
         
-  <?php if(isset($makeOrder[0])){ ?>
+  <?php if(isset($makeOrder)){ 
+    foreach($makeOrder as $value){    
+  ?>
           
           
             <div class="cont-cofre">
             <div class="card" style="width: 18rem;">
-              <img src="../../<?=$makeOrder[0]['path_image']?>" class="card-img-top" alt="..."  height="150">
+              <img src="../../<?=$value['path_image']?>" class="card-img-top" alt="..."  height="150">
               <div class="card-body">
-                <h5 class="card-title"><?=$makeOrder[0]['order_name']?></h5>
-                <p class="card-text price">Preço disposto a pagar: <?=$makeOrder[0]['order_price']?></p>
-                <p class="card-text">Categoria: <?=$makeOrder[0]['categories']?></p>
+                <h5 class="card-title"><?=$value['order_name']?></h5>
+                <p class="card-text price">Preço disposto a pagar: <?=$value['order_price']?></p>
+                <p class="card-text">Categoria: <?=$value['categories']?></p>
                 <div class="card1">
                   <form  method="POST" action="/myrequests/edita">
-                    <button href="/myrequests/edita"  class="btn btn-primary" name="edita" value="<?=$makeOrder[0]['order_name']?>">Editar</button>
-                    <button href="/myrequests/edita" class="btn btn-primary" name="excluir" value="<?=$makeOrder[0]['id_order']?>">Excluir</button>
+                    <button href="/myrequests/edita"  class="btn btn-primary" name="edita" value="<?=$value['order_name']?>">Editar</button>
+                    <button href="/myrequests/edita" class="btn btn-primary" name="excluir" value="<?=$value['id_order']?>">Excluir</button>
                   </form> 
                 </div>
-                <div class="card2">
-                  <a href="#" class="btn btn-primary bt">Ver propostas para este pedido</a>
-                </div>
+                
+                  <div class="card2">
+                  <form  method="POST" action="/proposal">  
+                    <button href="/proposal" style="width: 234px; height: 50px;" class="btn btn-primary bt" name="id_proposal" value="<?=$value['id_order']?>">Ver propostas </button>
+                    </form>  
+                  </div>
+                
               </div>
             </div>
         
-
-          <?php if(isset($makeOrder[1])){ ?>
-
-                  <div class="card" style="width: 18rem;">
-                    <img src="../../<?=$makeOrder[1]['path_image']?>" class="card-img-top" alt="..."  height="150">
-                    <div class="card-body">
-                      <h5 class="card-title"><?=$makeOrder[1]['order_name']?></h5>
-                      <p class="card-text price">Preço disposto a pagar: <?=$makeOrder[1]['order_price']?></p>
-                      <p class="card-text">Categoria: <?=$makeOrder[1]['categories']?></p>
-                      <div class="card1">
-                      <form  method="POST" action="/myrequests/edita">
-                    <button href="/myrequests/edita"  class="btn btn-primary" name="edita" value="<?=$makeOrder[1]['order_name']?>">Editar</button>
-                    <button href="/myrequests/edita" class="btn btn-primary" name="excluir" value="<?=$makeOrder[1]['id_order']?>">Excluir</button>
-                  </form> 
-                      </div>
-                      <div class="card2">
-                        <a href="#" class="btn btn-primary bt">Ver propostas para este pedido</a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <?php if(isset($makeOrder[2])){ ?>
-                       
-                    <div class="card" style="width: 18rem; ">
-                          <img src="../../<?=$makeOrder[2]['path_image']?>" class="card-img-top" alt="..." height="150" width="42">
-                          <div class="card-body">
-                            <h5 class="card-title"><?=$makeOrder[2]['order_name']?></h5>
-                            <p class="card-text price">Preço disposto a pagar:<?=$makeOrder[2]['order_price']?></p>
-                            <p class="card-text">Categoria:<?=$makeOrder[2]['categories']?></p>
-                          <div class="card1">
-                          <form  method="POST" action="/myrequests/edita">
-                            <button href="/myrequests/edita"  class="btn btn-primary" name="edita" value="<?=$makeOrder[2]['order_name']?>">Editar</button>
-                            <button href="/myrequests/edita" class="btn btn-primary" name="excluir" value="<?=$makeOrder[2]['id_order']?>">Excluir</button>
-                          </form> 
-                          </div>
-                          <div class="card2">
-                            <a href="" class="btn btn-primary bt">Ver propostas para este pedido</a>
-                          </div>
-                        </div>
-                      </div>
-
-                      <?php if(isset($makeOrder[3])){ ?>
-                        
-                        <div class="card" style="width: 18rem;">
-                          <img src="../../<?=$makeOrder[3]['path_image']?>" class="card-img-top" alt="..."  height="150">
-                          <div class="card-body">
-                            <h5 class="card-title"><?=$makeOrder[3]['order_name']?></h5>
-                            <p class="card-text price">Preço disposto a pagar:  <?=$makeOrder[3]['order_price']?></p>
-                            <p class="card-text">Categoria:  <?=$makeOrder[3]['categories']?></p>
-                            <div class="card1">
-                            <form  method="POST" action="/myrequests/edita">
-                              <button href="/myrequests/edita"  class="btn btn-primary" name="edita" value="<?=$makeOrder[3]['order_name']?>">Editar</button>
-                              <button href="/myrequests/edita" class="btn btn-primary" name="excluir" value="<?=$makeOrder[3]['id_order']?>">Excluir</button>
-                            </form> 
-                            </div>
-                            <div class="card2">
-                              <a href="#" class="btn btn-primary bt">Ver propostas para este pedido</a>
-                            </div>
-                          </div>
-                        </div>
-                        
-                      <?php } ?>
-
-                  <?php }?>
-
-          <?php } ?>
-
-<?php }else if(isset($edita)){ ?>
+      <?php } ?>
+      <?php if(empty($makeOrder)){ ?>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <h5 style="text-align:center">Sem pedido</h5>
+        <?php } ?>  
+      
+<?php }
+if(isset($edita)){ ?>
            
           <form  method="POST" action="/myrequests">
           <div class="card" style="width: 18rem;">
@@ -174,15 +123,8 @@
 
 
 
-<? }else{ ?>
-  <br></br>
-  <br></br>
-  <br></br>
-  <br></br>
-  <h5 style="text-align:center">Sem pedido</h5>
-  
-<?php } ?>         
- 
+<?php } ?>
+
         </div>
       </div>
 

@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="pt_br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="../../public/node_modules/bootstrap/compiler/bootstrap.css" rel="stylesheet">
+
+    <link href="../../public/css/navbar.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../public/css/address.css">
+    <link rel="stylesheet" href="../../public/css/menu.css">
+
+    <title>Marked</title>
+  </head>
+
+  <body>
+  
+    <input type="checkbox" id="check">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <div class="log-men">
+            <label for="check">
+              <img src="../../public/img/menu.svg" id="btn"/>
+            </label>
+            <a href="index.html">
+              <img src="../../public/img/logomarked.svg" class="img-fluid" alt="Marked">
+            </a>
+          </div>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+          
+          <div class="collapse navbar-collapse" id="navbarSite">
+            <form class="form-inline mx-auto" >
+              <input class="form-contro" type="search" placeholder="⠀Pesquisar...">
+              <button class="btn btn-secondary" type="submit">ok</button>
+            </form>
+
+            <a href="/safebox.html">
+              <img src="../../public/img/pig.svg" class="pig" alt="Safebox">
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="sidebar">
+        <header><div class="image"></div>Olá, ...</header>
+        <ul>
+          <li><a href="myrequests.html"><img class="icon" src="images/myrequests.png">⠀Meus pedidos</a></li>
+          <li><a href="make_order.html"><img class="icon" src="images/makeorder.png">⠀Fazer Pedido</a></li>
+          <li><a href="notifications.html"><img class="icon" src="images/notification.png">⠀Notificações</a></li>
+          <li><a href="profile.html"><img class="icon" src="images/myprofile.png">⠀Meu perfil</a></li>
+          <li><a href="helpcenter.html"><img class="icon" src="images/helpcenter.png">⠀Central de ajuda</a></li>
+          <li><a href="about_us.html"><img class="icon" src="images/aboutus.png">⠀Sobre nós</a></li>
+          <li><a href="terms_of_use.html"><img class="icon" src="images/termsofuse.png">⠀Termos de uso</a></li>
+          <li><a href="#"><img class="icon" src="images/logoff.svg">⠀Sair</a></li>
+        </ul>
+      </div>
+
+      <h1 class="title">Selecione o endereço de envio</h1>
+
+      <div class="list">
+        <form class="form" action="/payment" method="POST">
+          <input class="imput" name="nome" type="text" placeholder="⠀Nome completo">
+          <input class="imput" name="Telefone" type="text" placeholder="⠀Telefone">
+          <input class="imput" name="CEP" type="text" placeholder="⠀CEP">
+          <input class="imput"  name="Endereço" type="text" placeholder="⠀Endereço">
+          <input class="imput" name="Numero" type="text" placeholder="⠀Número">
+          <input class="imput" name="Bairro" type="text" placeholder="⠀Bairro">
+
+          <div>
+            <select name="estado" id="inputQuestion" class="imput">
+              <option>Estado</option> 
+              <option value="ac">Acre</option> 
+              <option value="al">Alagoas</option> 
+              <option value="am">Amazonas</option> 
+              <option value="ap">Amapá</option> 
+              <option value="ba">Bahia</option> 
+              <option value="ce">Ceará</option> 
+              <option value="df">Distrito Federal</option> 
+              <option value="es">Espírito Santo</option> 
+              <option value="go">Goiás</option> 
+              <option value="ma">Maranhão</option> 
+              <option value="mt">Mato Grosso</option> 
+              <option value="ms">Mato Grosso do Sul</option> 
+              <option value="mg">Minas Gerais</option> 
+              <option value="pa">Pará</option> 
+              <option value="pb">Paraíba</option> 
+              <option value="pr">Paraná</option> 
+              <option value="pe">Pernambuco</option> 
+              <option value="pi">Piauí</option> 
+              <option value="rj">Rio de Janeiro</option> 
+              <option value="rn">Rio Grande do Norte</option> 
+              <option value="ro">Rondônia</option> 
+              <option value="rs">Rio Grande do Sul</option> 
+              <option value="rr">Roraima</option> 
+              <option value="sc">Santa Catarina</option> 
+              <option value="se">Sergipe</option> 
+              <option value="sp">São Paulo</option> 
+              <option value="to">Tocantins</option> 
+            </select>
+          </div>
+
+          
+            <select name="cidades" id="inputQuestion" class="imput">
+            <option>Cidade</option>
+            <option class="ac" value="Acrelândia">Acrelândia</option> 
+            <option class="ac" value="Assis Brasil">Assis Brasil</option> 
+            <option class="ac" value="Brasiléia">Brasiléia</option> 
+            <option class="ac" value="Bujari">Bujari</option> 
+            <option class="ac" value="Capixaba">Capixaba</option> 
+            <option class="ac" value="Cruzeiro do Sul">Cruzeiro do Sul</option> 
+            <option class="ac" value="Epitaciolândia">Epitaciolândia</option> 
+            <option class="ac" value="Feijó">Feijó</option> 
+            <option class="ac" value="Jordão">Jordão</option>
+            <option class="ac" value="Manoel Urbano">Manoel Urbano</option> 
+            <option class="ac" value="Marechal Thaumaturgo">Marechal Thaumaturgo</option> 
+            <option class="ac" value="Mâncio Lima">Mâncio Lima</option> 
+            <option class="ac" value="Plácido de Castro">Plácido de Castro</option> 
+            <option class="ac" value="Porto Acre">Porto Acre</option> 
+            <option class="ac" value="Porto Walter">Porto Walter</option> 
+            <option class="ac" value="Rio Branco">Rio Branco</option> 
+            <option class="ac" value="Rodrigues Alves">Rodrigues Alves</option> 
+            <option class="ac" value="Santa Rosa do Purus">Santa Rosa do Purus</option>
+            <option class="ac" value="Sena Madureira">Sena Madureira</option> 
+            <option class="ac" value="Senador Guiomard">Senador Guiomard</option> 
+            <option class="ac" value="Tarauacá">Tarauacá</option> 
+            <option class="ac" value="Xapuri">Xapuri</option> 
+
+            <option class="al" value="Água Branca">Água Branca</option> 
+            <option class="al" value="Anadia">Anadia</option> 
+            <option class="al" value="Arapiraca">Arapiraca</option> 
+            <option class="al" value="Atalaia">Atalaia</option> 
+            <option class="al" value="Barra de Santo Antônio">Barra de Santo Antônio</option> 
+            <option class="al" value="Barra de São Miguel">Barra de São Miguel</option> 
+            <option class="al" value="Batalha">Batalha</option> 
+            <option class="al" value="Belém">Belém</option> 
+            <option class="al" value="Belo Monte">Belo Monte</option>
+            <option class="al" value="Boca da Mata">Boca da Mata</option> 
+            <option class="al" value="Branquinha">Branquinha</option> 
+            <option class="al" value="Cacimbinhas">Cacimbinhas</option> 
+            <option class="al" value="Cajueiro">Cajueiro</option> 
+            <option class="al" value="Campestre">Campestre</option> 
+            <option class="al" value="Campo Alegre">Campo Alegre</option> 
+            <option class="al" value="Campo Grande">Campo Grande</option> 
+            <option class="al" value="Canapi">Canapi</option> 
+            <option class="al" value="Capela">Capela</option>
+            <option class="al" value="Carneiros">Carneiros</option> 
+            <option class="al" value="Chã Preta">Chã Preta</option> 
+            <option class="al" value="Coité do Noia">Coité do Noia</option> 
+            <option class="al" value="Colônia Leopoldina">Colônia Leopoldina</option>
+            <option class="al" value="Coqueiro Seco">Coqueiro Seco</option> 
+            <option class="al" value="Coruripe">Coruripe</option> 
+            <option class="al" value="Craíbas">Craíbasa</option> 
+            <option class="al" value="Delmiro Gouveia">Delmiro Gouveia</option> 
+            <option class="al" value="Dois Riachos">Dois Riachos</option> 
+            <option class="al" value="Estrela de Alagoas">Estrela de Alagoas</option> 
+            <option class="al" value="Feira Grande">Feira Grande</option> 
+            <option class="al" value="Feliz Deserto">Feliz Deserto</option> 
+            <option class="al" value="Flexeiras">Flexeiras</option>
+            <option class="al" value="Girau do Ponciano">Girau do Ponciano</option> 
+            <option class="al" value="Ibateguara">Ibateguara</option> 
+            <option class="al" value="Igaci">Igaci</option> 
+            <option class="al" value="Igreja Nova">Igreja Nova</option> 
+            <option class="al" value="Inhapi">Inhapi</option> 
+            <option class="al" value="Jacaré dos Homens">Jacaré dos Homens</option> 
+            <option class="al" value="Jacuípe">Jacuípe</option> 
+            <option class="al" value="Japaratinga">Japaratinga</option> 
+            <option class="al" value="Jaramataia">Jaramataia</option>
+            <option class="al" value="Jequiá da Praia">Jequiá da Praia</option> 
+            <option class="al" value="Joaquim Gomes">Joaquim Gomes</option> 
+            <option class="al" value="Jundiá">Jundiá</option> 
+            <option class="al" value="Junqueiro">Junqueiro</option> 
+            <option class="al" value="Lagoa da Canoa">Lagoa da Canoa</option> 
+            <option class="al" value="Limoeiro de Anadia">Limoeiro de Anadia</option> 
+            <option class="al" value="Maceió">Maceió</option> 
+            <option class="al" value="Major Izidoro">Major Izidoro</option> 
+            <option class="al" value="Mar Vermelho">Mar Vermelho</option> 
+            <option class="al" value="Maragogi">Maragogi</option> 
+            <option class="al" value="Maravilha">Maravilha</option> 
+            <option class="al" value="Marechal Deodoro">Marechal Deodoro</option> 
+            <option class="al" value="Maribondo">Maribondo</option>
+            <option class="al" value="Mata Grande">Mata Grande</option> 
+            <option class="al" value="Matriz de Camaragibeo">Matriz de Camaragibe</option> 
+            <option class="al" value="Messias">Messias</option> 
+            <option class="al" value="Minador do Negrão">Minador do Negrão</option> 
+            <option class="al" value="Monteirópolis">Monteirópolis</option> 
+            <option class="al" value="Murici">Muricir</option> 
+            <option class="al" value="Novo Lino">Novo Lino</option> 
+            <option class="al" value="Olho d'Água das Flores">Olho d'Água das Flores</option> 
+            <option class="al" value="Olho d'Água do Casado">Olho d'Água do Casado</option>
+            <option class="al" value="Olho d'Água Grande">Olho d'Água Grande</option> 
+            <option class="al" value="Olivença">Olivença</option> 
+            <option class="al" value="Ouro Branco">Ouro Branco</option> 
+            <option class="al" value="Palestina">Palestina</option>
+            <option class="al" value="Palmeira dos Índios">Palmeira dos Índios</option> 
+            <option class="al" value="Pão de Açúcar">Pão de Açúcar</option> 
+            <option class="al" value="Pariconha">Pariconha</option> 
+            <option class="al" value="Paripueira">Paripueira</option> 
+            <option class="al" value="Passo de Camaragibe">Passo de Camaragibe</option> 
+            <option class="al" value="Paulo Jacinto">Paulo Jacinto</option> 
+            <option class="al" value="Penedo">Penedo</option> 
+            <option class="al" value="Piaçabuçu">Piaçabuçu</option> 
+            <option class="al" value="Pilar">Pilar</option>
+            <option class="al" value="Pindoba">Pindoba</option> 
+            <option class="al" value="Piranhas">Piranhas</option> 
+            <option class="al" value="Poço das Trincheiras">Poço das Trincheiras</option> 
+            <option class="al" value="Porto Calvo">Porto Calvo</option> 
+            <option class="al" value="Porto de Pedras">Porto de Pedras</option> 
+            <option class="al" value="Porto Real do Colégio">Porto Real do Colégio</option> 
+            <option class="al" value="Quebrangulo">Quebrangulo</option> 
+            <option class="al" value="Rio Largo">Rio Largo</option> 
+            <option class="al" value="Roteiro">Roteiro</option>
+            <option class="al" value="Santa Luzia do Norte">Santa Luzia do Norte</option> 
+            <option class="al" value="Santana do Ipanema">Santana do Ipanema</option> 
+            <option class="al" value="Santana do Mundaú">Santana do Mundaú</option> 
+            <option class="al" value="São Brás">São Brás</option>
+            <option class="al" value="São José da Laje">São José da Laje</option> 
+            <option class="al" value="São José da Tapera">São José da Tapera</option> 
+            <option class="al" value="São Luís do Quitunde">São Luís do Quitunde</option> 
+            <option class="al" value="São Miguel dos Campos">São Miguel dos Campos</option> 
+            <option class="al" value="São Miguel dos Milagres">São Miguel dos Milagres</option> 
+            <option class="al" value="São Sebastião">São Sebastião</option> 
+            <option class="al" value="Satuba">Satuba</option> 
+            <option class="al" value="Senador Rui Palmeira">Senador Rui Palmeira</option> 
+            <option class="al" value="Tanque d'Arca">Tanque d'Arca</option>
+            <option class="al" value="Taquarana">Taquarana</option> 
+            <option class="al" value="Teotônio Vilela">Teotônio Vilela</option> 
+            <option class="al" value="Traipu">Traipu</option> 
+            <option class="al" value="União dos Palmares">União dos Palmares</option> 
+            <option class="al" value="Viçosa">Viçosa</option>   
+
+            <option class="am" value="Alvarães">Alvarães</option> 
+            <option class="am" value="Amaturá">Amaturá</option> 
+            <option class="am" value="Anamã">Anamã</option> 
+            <option class="am" value="Anori">Anori</option> 
+            <option class="am" value="Apuí">Apuí</option> 
+            <option class="am" value="Atalaia do Norte">Atalaia do Norte</option> 
+            <option class="am" value="Autazes">Autazes</option> 
+            <option class="am" value="Barcelos">Barcelos</option> 
+            <option class="am" value="Barreirinha">	Barreirinha</option> 
+            <option class="am" value="Benjamin Constant">Benjamin Constant</option> 
+            <option class="am" value="Beruri">Beruri</option> 
+            <option class="am" value="Boa Vista do Ramos">Boa Vista do Ramos</option> 
+            <option class="am" value="Boca do Acre">Boca do Acre</option> 
+            <option class="am" value="Borba">Borba</option> 
+            <option class="am" value="Caapiranga">Caapiranga</option> 
+            <option class="am" value="Canutama">Canutama</option> 
+            <option class="am" value="Carauari">Carauari</option>
+            <option class="am" value="Careiro">Careiro</option> 
+            <option class="am" value="Careiro da Várzea">Careiro da Várzea</option> 
+            <option class="am" value="Coari">	Coari</option> 
+            <option class="am" value="Codajás">Codajás</option> 
+            <option class="am" value="Eirunepé">Eirunepé</option> 
+            <option class="am" value="Envira">Envira</option> 
+            <option class="am" value="Fonte Boa">Fonte Boa</option> 
+            <option class="am" value="Guajará">Guajará</option> 
+            <option class="am" value="Humaitá">Humaitá</option> 
+            <option class="am" value="Ipixuna">Ipixuna</option> 
+            <option class="am" value="Iranduba">Iranduba</option>
+            <option class="am" value="Itacoatiara">Itacoatiara</option> 
+            <option class="am" value="Itamarati">Itamarati</option> 
+            <option class="am" value="Itapiranga">Itapiranga</option> 
+            <option class="am" value="Japurá">Japurá</option> 
+            <option class="am" value="Juruá">Juruá</option> 
+            <option class="am" value="Jutaí">Jutaí</option> 
+            <option class="am" value="Lábrea">Lábrea</option> 
+            <option class="am" value="Manacapuru">Manacapuru</option> 
+            <option class="am" value="Manaquiri">Manaquiri</option>
+            <option class="am" value="Manaus">Manaus</option> 
+            <option class="am" value="Manicoré">Manicoré</option> 
+            <option class="am" value="Maraã">Maraã</option> 
+            <option class="am" value="Maués">Maués</option> 
+            <option class="am" value="Nhamundá">Nhamundá</option> 
+            <option class="am" value="Nova Olinda do Norte">Nova Olinda do Norte</option> 
+            <option class="am" value="Novo Airão">Novo Airão</option> 
+            <option class="am" value="Novo Aripuanã">	Novo Aripuanã</option> 
+            <option class="am" value="Parintins">Parintins</option> 
+            <option class="am" value="Pauini">Pauini</option> 
+            <option class="am" value="Presidente Figueiredo">Presidente Figueiredo</option>
+            <option class="am" value="Rio Preto da Eva">Rio Preto da Eva</option> 
+            <option class="am" value="Santa Isabel do Rio Negro">Santa Isabel do Rio Negro</option> 
+            <option class="am" value="Santo Antônio do Içá">Santo Antônio do Içá</option>
+            <option class="am" value="São Gabriel da Cachoeira">São Gabriel da Cachoeira</option> 
+            <option class="am" value="São Paulo de Olivença">São Paulo de Olivença</option> 
+            <option class="am" value="São Sebastião do Uatumã">São Sebastião do Uatumãa</option> 
+            <option class="am" value="Silves">Silves</option> 
+            <option class="am" value="Tabatinga">Tabatinga</option> 
+            <option class="am" value="Tapauá">Tapauá</option> 
+            <option class="am" value="Tefé">Tefé</option> 
+            <option class="am" value="Tonantins">Tonantins</option> 
+            <option class="am" value="Uarini">Uarini</option>
+            <option class="am" value="Urucará">Urucará</option>
+            <option class="am" value="Urucurituba">Urucurituba</option>
+            
+            <option class="ap" value="Amapá">Amapá</option> 
+            <option class="ap" value="Calçoene">Calçoene</option> 
+            <option class="ap" value="Cutias">Cutias</option>
+            <option class="ap" value="Ferreira Gomes">Ferreira Gomes</option> 
+            <option class="ap" value="Itaubal">Itaubal</option> 
+            <option class="ap" value="Laranjal do Jari">Laranjal do Jari</option>
+            <option class="ap" value="Macapá">Macapá</option> 
+            <option class="ap" value="Mazagão">Mazagão</option> 
+            <option class="ap" value="Oiapoque">Oiapoque</option> 
+            <option class="ap" value="Pedra Branca do Amapari">Pedra Branca do Amapari</option> 
+            <option class="ap" value="Porto Grande">Porto Grande</option> 
+            <option class="ap" value="Pracuúba">Pracuúba</option> 
+            <option class="ap" value="Santana">Santana</option> 
+            <option class="ap" value="Serra do Navio">Serra do Navio</option> 
+            <option class="ap" value="Tartarugalzinho">Tartarugalzinho</option>
+            <option class="ap" value="Vitória do Jari">Vitória do Jari</option>
+
+            <input class="confirm" type="submit" value="Confirmar"> 
+          
+        </form>
+      </div>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+      <script>$('[name="estado"]').click(function(){
+
+        // ocultando todas
+        $('[name="cidades"] option').css('display', 'none');
+         
+        // exibindo as do estado selecionado
+        $('[name="cidades"] .' + $(this).val()).css('display', '');
+        
+        });</script>
+  
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+  </body>
+</html>

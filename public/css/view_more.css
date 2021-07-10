@@ -1,0 +1,147 @@
+.cont {
+    display: flex;
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.request {
+    border: 0.5px solid #c1c1c1;
+    height: auto;
+    width: 30rem;
+    display: grid;
+    justify-content: center;
+}
+
+p {
+    margin-top: 10px;
+}
+
+.img {
+    margin-top: -1.2rem;
+    width: 25rem;
+    height: 15rem;
+}
+
+.img-request {
+    width: 25rem;
+    height: 15rem;
+}
+
+.informations {
+    display: grid;
+    width: 25rem;
+    height: auto;
+    justify-content: left;
+}
+
+.label {
+    display: flex;
+    justify-content: left;
+    text-align: justify;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.btn_make_proposal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10rem;
+    height: 2.1rem;
+    background-color: #20E0EC;
+    border: none;
+    border-radius: 5px;
+    margin-right: 1rem;
+}
+.btn_make_proposal_red {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10rem;
+    height: 2.1rem;
+    background-color: #f74c19;
+    border: none;
+    border-radius: 5px;
+    margin-right: 1rem;
+}
+
+
+@media (max-width: 450px) {
+    .cont {
+        height: 90vh;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .request {
+        width: 25rem;
+        margin-top: 1rem;
+    }
+
+    .img {
+        margin-top: -2.4rem;
+        width: 23rem;
+        height: 15rem;
+    }
+    
+    .img-request {
+        width: 23rem;
+        height: 15rem;
+    }
+    
+    .informations {
+        display: grid;
+        width: 23rem;
+    }
+    
+}
+
+@media (max-width: 375px) {
+    .request {
+        width: 22rem;
+    }
+
+    .img {
+        margin-top: -3rem;
+        width: 20rem;
+        height: 15rem;
+    }
+    
+    .img-request {
+        width: 20rem;
+        height: 15rem;
+    }
+    
+    .informations {
+        width: 20rem;
+    }
+    
+}
+
+@media (max-width: 320px) {
+    .request {
+        height: auto;
+        width: 19rem;
+    }
+
+    .img {
+        margin-top: -3rem;
+        width: 18rem;
+        height: 15rem;
+    }
+    
+    .img-request {
+        width: 18rem;
+        height: 15rem;
+    }
+    
+    .informations {
+        width: 18rem;
+    }
+    
+}

@@ -23,13 +23,12 @@ class RegisterController extends Controller {
             
             $email = $request->post('email');
             $select = $registerModel->getEmail($email);
-            if(strlen($senha) < 8){
-                $this->view('register', ['senhaPequena' => 'senhaPequena', 'post' => $post]);
-            }else if(!empty($select)){
+            
+            if(!empty($select)){
                 $this->view('register', ['emailDuplicado' => 'emailDuplicado', 'post' => $post]);
             }else if($senha !== $confirm_senha) {
                 $this->view('register', ['senha' => 'senha', 'post' => $post]);
-            } else{
+            }else{
 
                 $db = $registerModel->inserir($post);
                 
@@ -47,6 +46,9 @@ class RegisterController extends Controller {
                             break;
                         case 'senha vazia':
                             $erro = 'Senha vazia';
+                            break;
+                        case 'senha pequena':
+                            $erro = 'Senha deve conter 8 caracteres no minimo';
                             break;
                     }
 

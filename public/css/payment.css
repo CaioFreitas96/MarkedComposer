@@ -1,0 +1,142 @@
+.cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    font-size: 2.3rem;
+}
+
+.container_payment {
+    display: grid;
+    justify-content: center;
+    width: 30rem;
+    height: 35rem;
+    border: 1px solid #c1c1c1;
+}
+
+span {
+    display: flex;
+    justify-content: center;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    width: 20rem;
+    height: 2rem;
+    border: 0.1px solid #c1c1c1;
+}
+
+.radio {
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+.delivery {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    font-size: 1rem;
+    margin: 0px;
+}
+
+.credit_card {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: 20rem;
+    height: 15rem;
+}
+
+.credit {
+    width: 18rem;
+    border: none;
+    border-bottom: 0.1px solid #c1c1c1;
+    
+}
+
+.confirm {
+    background-color: #20E0EC;
+    border: none;
+    border-radius: 5px;
+    height: 2rem;
+}
+
+@media (max-width: 450px) {
+    .container_payment {
+        display: grid;
+        justify-content: center;
+        width: 25rem;
+        height: 35rem;
+        border: 1px solid #c1c1c1;
+    }
+
+    .option {
+        display: flex;
+        align-items: center;
+        width: 18rem;
+        height: 2rem;
+        border: 0.1px solid #c1c1c1;
+    }
+
+    .delivery {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        font-size: 0.8rem;
+        margin: 0px;
+    }
+
+    .credit_card {
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        width: 18rem;
+        height: 15rem;
+    }
+    
+    .credit {
+        width: 16rem;
+        border: none;
+        border-bottom: 0.1px solid #c1c1c1;
+        
+    } 
+}
+
+@media (max-width: 350px) {
+    .container_payment {
+        display: grid;
+        justify-content: center;
+        width: 20rem;
+        height: 30rem;
+        border: 1px solid #c1c1c1;
+    }
+
+    .option {
+        display: flex;
+        align-items: center;
+        width: 16rem;
+        height: 2rem;
+        border: 0.1px solid #c1c1c1;
+    }
+
+    .credit_card {
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        width: 16rem;
+        height: 15rem;
+    }
+    
+    .credit {
+        width: 14rem;
+        border: none;
+        border-bottom: 0.1px solid #c1c1c1;
+        
+    } 
+}

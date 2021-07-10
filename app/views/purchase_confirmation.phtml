@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pt_br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="../../public/node_modules/bootstrap/compiler/bootstrap.css" rel="stylesheet">
+
+    <link href="../../public/css/navbar.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../public/css/purchase_confirmation.css">
+    <link rel="stylesheet" href="../../public/css/menu.css">
+
+    <title>Marked</title>
+  </head>
+  <body>
+
+    <input type="checkbox" id="check">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <div class="log-men">
+            <label for="check">
+              <img src="../../public/img/menu.svg" id="btn"/>
+            </label>
+            <a href="index.html">
+              <img src="../../public/img/logomarked.svg" class="img-fluid" alt="Marked">
+            </a>
+          </div>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSite">
+            <form class="form-inline mx-auto" >
+              <input class="form-contro" type="search" placeholder="⠀Pesquisar...">
+              <button class="btn btn-secondary" type="submit">ok</button>
+            </form>
+
+            <a href="safebox.html">
+              <img src="../../public/img/pig.svg" class="pig" alt="Safebox">
+            </a>
+
+          </div>
+        </div>
+      </nav>
+
+      <div class="sidebar">
+        <header><div class="image"></div>Olá, ...</header>
+        <ul>
+          <li><a href="myrequests.html"><img class="icon" src="images/myrequests.png">⠀Meus pedidos</a></li>
+          <li><a href="make_order.html"><img class="icon" src="images/makeorder.png">⠀Fazer Pedido</a></li>
+          <li><a href="notifications.html"><img class="icon" src="images/notification.png">⠀Notificações</a></li>
+          <li><a href="profile.html"><img class="icon" src="images/myprofile.png">⠀Meu perfil</a></li>
+          <li><a href="helpcenter.html"><img class="icon" src="images/helpcenter.png">⠀Central de ajuda</a></li>
+          <li><a href="about_us.html"><img class="icon" src="images/aboutus.png">⠀Sobre nós</a></li>
+          <li><a href="terms_of_use.html"><img class="icon" src="images/termsofuse.png">⠀Termos de uso</a></li>
+          <li><a href="#"><img class="icon" src="images/logoff.svg">⠀Sair</a></li>
+        </ul>
+      </div>
+
+      <div class="cont">
+        <h1 class="title">Confirmação de compra</h1>
+        <form method="POST" action="/ok">
+          
+          <div class="product">
+              <img class="img_product" src="../../public/upload/gtapst.jpg">
+              <div class="labels">
+                  <span>Nome do produto: GTA</span>
+                  <span>Quantidade: 1</span>
+              </div>
+          </div>
+
+          <h3>Endereço de entrega</h3>
+
+          <div class="address">
+              <span class="confirm">Nome: Cliente</span>
+              <span class="confirm">Telefone: 930106161</span>
+              <span class="confirm">Rua: Kaoro</span>
+              <span class="confirm">Bairro: São Judas</span>
+              <span class="confirm">Cidade - Estado: SP</span>
+              <span class="confirm">CEP: 06786120</span>
+              <span class="confirm">Tempo de entrega estimado: 5 dias uteis</span>
+          </div>
+
+          <div class="address">
+              <span class="confirm">Forma de pagamento: Cartão</span>
+              <span class="confirm">Itens: GTA  </span>
+              <span class="confirm">Frete:</span>
+              <span class="confirm">Total: 160,90 </span>
+          </div>
+
+          <button class="purchase" >Confirmar compra</button>
+        </form>
+      </div>
+
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    
+  </body>
+</html>

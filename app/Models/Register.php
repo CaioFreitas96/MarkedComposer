@@ -40,6 +40,8 @@ class Register{
                 
                 return "senha vazia";
 
+            }else if(strlen($post['pass']) < 8 && strlen($post['confirm_pass']) ){
+                return "senha pequena";
             }else{
                 
                 $post = [
@@ -63,5 +65,10 @@ class Register{
     
         return $db->getList($this->table, '*', ['user_email' => $condicao]);
     }  
+    public function getUser($condicao){
+        $db = Database::getInstance();
+    
+        return $db->getList($this->table, '*', ['id_user' => $condicao]);
+    }
 
 }  
